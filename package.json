@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "ncc build src/action.js -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "C17AN",
+  "license": "MIT",
   "devDependencies": {
     "cors": "^2.8.5"
+  },
+  "dependencies": {
+    "@vercel/ncc": "^0.28.6"
   }
 }
