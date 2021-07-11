@@ -1,17 +1,16 @@
 name: Super-Linter
+on: push # 이벤트
 
-on: push
+jobs: # 수행할 작업
+	super-lint:
+		name: Lint code base
+		runs-on: ubuntu-latest # 실행 환경 (MacOS, Window도 선택할 수 있음, 깃허브에서 호스팅함)
+		steps: # 작업을 구성하는 태스크
+			- name: Checkout Code
+			- uses: actions/checkout@v2
 
-jobs:
-  super-lint:
-    name: Lint code base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run Super-Linter
-        uses: github/super-linter@v3
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+			- name: Run Super-Linter
+			- uses: github/super-linter@v3
+				env:
+					DEFAULT_BRANCH: main
+					GITHUB_MAIN: ${{ secrets.GITHUB_TOKEN }}
