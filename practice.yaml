@@ -1,16 +1,19 @@
-name: Node app CI with npm # 지정할 워크플로우 이름 [required]
+# name: Node app CI with npm # 지정할 워크플로우 이름 [required]
 
-on: # 트리거될 깃허브 이벤트 목록 [required]
-  push:
-    branches: [master] # master 브랜치에 코드를 푸시하면 아래 동작이 실행된다.
-  pull_request:
-    branches: [master] # master 브랜치에 PR을 제출하면 아래 동작이 실행된다.
+# on: # 트리거될 깃허브 이벤트 목록 [required]
+#   push:
+#     branches: [master] # master 브랜치에 코드를 푸시하면 아래 동작이 실행된다.
+#   pull_request:
+#     branches: [master] # master 브랜치에 PR을 제출하면 아래 동작이 실행된다.
 
-jobs: # 수행할 동작 [required]
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # 수행할 동작은 https://github.com/actions 중에서 선택할 수 있다.
-      - uses: actions/checkout@v2
-      - name: Set up node.js
-        uses: actions/setup-node@v2
+# jobs: # 수행할 동작 [required]
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # 수행할 동작은 https://github.com/actions 중에서 선택할 수 있다.
+#       - uses: actions/checkout@v2
+#       - name: Set up node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14'
+#       - run: npm install
